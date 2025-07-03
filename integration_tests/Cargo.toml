@@ -3,6 +3,9 @@ name = "myproject-tests"
 version = { workspace = true }
 edition = { workspace = true }
 
+[lints]
+workspace = true
+
 [dependencies]
 borsh = { workspace = true }
 litesvm = { workspace = true }

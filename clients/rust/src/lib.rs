@@ -11,10 +11,12 @@ pub mod instructions {
 }
 
 pub mod errors {
+    #[allow(unused_imports)]
     pub use super::generated::errors::*;
 }
 
 pub mod shared {
+    #[allow(unused_imports)]
     pub use super::generated::shared::*;
 }
 
