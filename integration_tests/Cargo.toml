@@ -1,0 +1,13 @@
+[package]
+name = "myproject-tests"
+version = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+borsh = { workspace = true }
+litesvm = { workspace = true }
+myproject-client = { workspace = true }
+solana-sdk = { workspace = true }
+
+[dev-dependencies]
+test-log = "0.2.17"
