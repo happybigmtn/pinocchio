@@ -3,7 +3,7 @@ use pinocchio::{
     ProgramResult,
 };
 
-use crate::processor::process_initialize;
+use crate::processor::dispatch_instruction;
 
 entrypoint!(process_instruction);
 
@@ -12,12 +12,5 @@ pub fn process_instruction(
     accounts: &[AccountInfo],
     instruction_data: &[u8],
 ) -> ProgramResult {
-    let (discriminator, instruction_data) = instruction_data
-        .split_first()
-        .ok_or(ProgramError::InvalidInstructionData)?;
-
-    match discriminator {
-        0 => process_initialize(program_id, accounts, instruction_data),
-        _ => Err(ProgramError::InvalidInstructionData),
-    }
+    dispatch_instruction(program_id, accounts, instruction_data)
 }
